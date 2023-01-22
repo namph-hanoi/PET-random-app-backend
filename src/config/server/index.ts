@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import * as http from 'http';
 import * as serverHandlers from './serverHandlers';
 import server from './server';
