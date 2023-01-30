@@ -5,7 +5,6 @@ import * as swaggerJSDoc from 'swagger-jsdoc';
 import * as swaggerUi from 'swagger-ui-express';
 import * as jwtConfig from '../config/middleware/jwtAuth';
 import AuthRouter from './AuthRouter';
-import UserRouter from './UserRouter';
 
 const swaggerDef = require('../../swaggerDef');
 
@@ -22,7 +21,7 @@ export function init(app: express.Application): void {
      *  Also, check if user authenticated
      * @constructs
      */
-    app.use('/v1/users', jwtConfig.isAuthenticated, UserRouter);
+    // app.use('/v1/users', jwtConfig.isAuthenticated, UserRouter);
 
     /**
      * @description Forwards any requests to the /auth URI to our AuthRouter

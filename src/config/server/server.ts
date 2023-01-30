@@ -1,13 +1,19 @@
 import * as express from 'express';
 import * as Middleware from '../middleware/middleware';
 import * as Routes from '../../routes';
-import connectDB from '../../config/connection';
+import { AppDataSource as DBConnection } from '../../config/connection';
 /**
  * @constant {express.Application}
  */
 const app: express.Application = express();
 
-connectDB();
+DBConnection.initialize()
+  .then(() => {
+      console.log('🚀 Data Source has been initialized!');
+  })
+  .catch((err) => {
+      console.error('💥 Error during Data Source initialization', err);
+  });
 
 /**
  * @constructs express.Application Middleware
