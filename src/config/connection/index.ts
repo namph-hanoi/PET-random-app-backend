@@ -9,9 +9,9 @@ const ORMConfig = {
     password: config.database.DB_PASSWORD,
     database: config.database.DB_NAME,
     entities: [`${process.cwd()}/src/components/**/model.ts`],
-    migrations: [`${process.cwd()}/build/migrations/**/*.js`],
+    migrations: [`${process.cwd()}/src/db/migrations/**.ts`],
     cli: {
-        migrationsDir: 'src/database/migrations',
+        migrationsDir: `${process.cwd()}/src/db/migrations`,
     },
     extra: {
         charset: 'utf8mb4_unicode_ci',

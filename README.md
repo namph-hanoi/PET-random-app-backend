@@ -6,3 +6,4 @@
 
 * Notice:
 - To generate a migration file, run ```yarn typeorm migration:generate ./src/db/migrations/{name_of_the_file}```
+- To run migartions, run  ```yarn typeorm migration:run```
